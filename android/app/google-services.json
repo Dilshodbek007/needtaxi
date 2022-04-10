@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148286371183",
+    "project_id": "needtaxi-bca08",
+    "storage_bucket": "needtaxi-bca08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148286371183:android:956dc05cad9eeeeaa9249a",
+        "android_client_info": {
+          "package_name": "com.example.needtaxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148286371183-2160933ve0k4dtcc3aium2i0pvvcltm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4htfcG0HH1E3jNSJKdgFRw2SfeSYdn3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148286371183-2160933ve0k4dtcc3aium2i0pvvcltm2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
