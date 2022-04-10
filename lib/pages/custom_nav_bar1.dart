@@ -95,7 +95,7 @@ class _CustomNavBar1State extends State<CustomNavBar1> {
           iconTheme: const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
           title: const Text(
-            'developers',
+            'NeedTaxi',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 1.2,
