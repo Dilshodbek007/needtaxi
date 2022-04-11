@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-   HomePage({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,15 +19,15 @@ class _HomePageState extends State<HomePage> {
             shrinkWrap: true,
             itemCount: 30,
             itemBuilder: (BuildContext context, int index) => SizedBox(
-                  height: 50,
-                  child: ListTile(
-                      leading: const Icon(Icons.home),
-                      trailing: const Text(
-                        "Home",
-                        style: TextStyle(color: Colors.green, fontSize: 15),
-                      ),
-                      title: Text("List item $index")),
-                )),
+              height: 50,
+              child: ListTile(
+                  leading: const Icon(Icons.home),
+                  trailing: const Text(
+                    "Home",
+                    style: TextStyle(color: Colors.green, fontSize: 15),
+                  ),
+                  title: Text("List item $index")),
+            )),
       ),
     );
   }
