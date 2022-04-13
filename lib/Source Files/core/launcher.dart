@@ -22,7 +22,7 @@ class _LauncherState extends State<Launcher> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'OrderIt',
+      title: 'NeedTaxi',
       initialRoute: '/',
       routes: {
         '/':(context)=>Application(),
