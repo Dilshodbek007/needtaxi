@@ -11,71 +11,6 @@ import 'application.dart';
 class Launcher extends StatefulWidget {
    Launcher({Key? key}) : super(key: key);
 
-  static ThemeData darkTheme=ThemeData(
-    selectedRowColor: Colors.red,
-      appBarTheme: AppBarTheme(
-        color: Colors.black45,
-        actionsIconTheme: IconThemeData(
-          color: Colors.white,
-        ),
-        titleTextStyle: TextStyle(
-            color: Colors.white
-        ),
-        iconTheme: IconThemeData(
-            color: Colors.white
-        ),
-      ),
-      iconTheme:IconThemeData(
-        color: Colors.grey,
-      ),
-      backgroundColor: Colors.black45,
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: Colors.white70,
-        unselectedItemColor: Colors.white54
-      ),
-    brightness: Brightness.dark,
-    inputDecorationTheme: InputDecorationTheme(
-      hintStyle: TextStyle(
-        color: Colors.white54,
-      ),
-      iconColor: Colors.white54,
-    ),
-    cardColor: Colors.white,
-    dividerColor: Colors.white70,
-
-  );
-
-  static ThemeData lightTheme=ThemeData(
-    appBarTheme: AppBarTheme(
-      color: Colors.white,
-      actionsIconTheme: IconThemeData(
-        color: Colors.black,
-      ),
-      titleTextStyle: TextStyle(
-          color: Colors.black
-      ),
-      iconTheme: IconThemeData(
-          color: Colors.black
-      ),
-    ),
-    iconTheme: IconThemeData(
-      color: Colors.grey,
-    ),
-    brightness: Brightness.light,
-    inputDecorationTheme: InputDecorationTheme(
-      iconColor: Colors.grey,
-      hintStyle: TextStyle(
-        color: Colors.grey
-      ),
-  ),
-    textTheme: TextTheme(
-      bodyMedium: TextStyle(
-        color: Colors.black87
-      ),
-    ),
-    cardColor: Colors.white,
-    dividerColor: Colors.grey
-  );
 
   @override
   State<Launcher> createState() => _LauncherState();
@@ -102,6 +37,32 @@ class _LauncherState extends State<Launcher> {
           size: 33,
           color: Colors.grey,
         ),
+          appBarTheme: AppBarTheme(
+            color: Colors.white,
+            actionsIconTheme: IconThemeData(
+              color: Colors.black,
+            ),
+            titleTextStyle: TextStyle(
+                color: Colors.black
+            ),
+            iconTheme: IconThemeData(
+                color: Colors.black
+            ),
+          ),
+          brightness: Brightness.light,
+          inputDecorationTheme: InputDecorationTheme(
+            iconColor: Colors.grey,
+            hintStyle: TextStyle(
+                color: Colors.grey
+            ),
+          ),
+          textTheme: TextTheme(
+            bodyMedium: TextStyle(
+                color: Colors.black87
+            ),
+          ),
+          cardColor: Colors.white,
+          dividerColor: Colors.grey
       )
           :
       ThemeData.dark().copyWith(
@@ -109,6 +70,32 @@ class _LauncherState extends State<Launcher> {
           size: 33,
           color: Colors.grey,
         ),
+        appBarTheme: AppBarTheme(
+          color: Colors.black45,
+          actionsIconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+          titleTextStyle: TextStyle(
+              color: Colors.white
+          ),
+          iconTheme: IconThemeData(
+              color: Colors.white
+          ),
+        ),
+        backgroundColor: Colors.black45,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            selectedItemColor: Colors.white70,
+            unselectedItemColor: Colors.white54
+        ),
+        brightness: Brightness.dark,
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(
+            color: Colors.white54,
+          ),
+          iconColor: Colors.white54,
+        ),
+        cardColor: Colors.white,
+        dividerColor: Colors.white70,
       ),
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
