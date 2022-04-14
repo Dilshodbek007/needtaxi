@@ -13,7 +13,7 @@ import 'package:needtaxi/Source%20Files/core/launcher.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const Launcher());
+    await tester.pumpWidget( Launcher());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

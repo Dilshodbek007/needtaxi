@@ -13,7 +13,6 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(10),
-        color: Colors.white,
         child: ListView.builder(
             controller: ScrollController(),
             shrinkWrap: true,

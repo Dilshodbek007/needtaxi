@@ -14,7 +14,6 @@ class Application extends StatefulWidget {
     this.route,
   }) : super(key: key);
   final String? route;
-
   @override
   State<Application> createState() => _ApplicationState();
 }
@@ -66,6 +65,7 @@ class _ApplicationState extends State<Application> {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       bottom: true,
       child: Scaffold(
@@ -92,11 +92,8 @@ class _ApplicationState extends State<Application> {
             },
             icon: const Icon(Icons.menu),
           ),
-          iconTheme: const IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
           title: const Text(
             "NeedTaxi",
-            style: TextStyle(color: Colors.black),
           ),
           elevation: 1.2,
         ),
@@ -107,7 +104,6 @@ class _ApplicationState extends State<Application> {
         bottomNavigationBar: MediaQuery.of(context).size.width <= 800
             ? Container(
           height: 60,
-          color: Colors.white,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -149,6 +145,7 @@ class _ApplicationState extends State<Application> {
 
   //drawer
   Widget myDrawer() {
+    ThemeData theme=Theme.of(context);
     return AnimatedContainer(
       width: menuWidth,
       duration: Duration(milliseconds: 256),
@@ -186,7 +183,9 @@ class _ApplicationState extends State<Application> {
                     Icon(
                       icons[i],
                       color:
-                      _currentPage == i ? Colors.blue : Colors.grey,
+                      _currentPage == i ? theme.iconTheme.copyWith(
+                          color: Colors.blue
+                      ).color : theme.iconTheme.color,
                     ),
                     SizedBox(width: 10),
                     Padding(
@@ -195,8 +194,10 @@ class _ApplicationState extends State<Application> {
                         pageName[i],
                         style: TextStyle(
                           color: _currentPage == i
-                              ? Colors.blue
-                              : Colors.black,
+                              ?theme.textTheme.bodyMedium?.copyWith(
+                            color: Colors.blue
+                          ).color
+                              : theme.textTheme.bodyMedium?.color
                         ),
                       ),
                     ),
@@ -206,7 +207,7 @@ class _ApplicationState extends State<Application> {
             )
                 : Icon(
               icons[i],
-              color: Colors.grey,
+              color: theme.iconTheme.color,
             ),
         ],
       ),
@@ -215,6 +216,7 @@ class _ApplicationState extends State<Application> {
 
   //bottomNavBar
   Widget bottomNavBarItem(int i, icon) {
+    ThemeData theme=Theme.of(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -222,16 +224,17 @@ class _ApplicationState extends State<Application> {
           margin: const EdgeInsets.only(bottom: 8),
           height: 2,
           width: 50,
-          color: _currentPage == i ? Colors.blue : Colors.white,
+          color: _currentPage == i ? theme.copyWith(cardColor: Colors.blue).cardColor: theme.cardColor,
         ),
         IconButton(
           onPressed: () => setState(() {
             _currentPage = i;
           }),
           icon: Icon(icon),
-          color: _currentPage == i ? Colors.blue : Colors.grey,
+          color: _currentPage == i ?theme.iconTheme.copyWith(color: Colors.blue).color:theme.iconTheme.color,
         )
       ],
     );
   }
+
 }

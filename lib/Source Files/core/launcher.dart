@@ -9,7 +9,71 @@ import 'application.dart';
 
 
 class Launcher extends StatefulWidget {
-  const Launcher({Key? key}) : super(key: key);
+   Launcher({Key? key}) : super(key: key);
+
+  static ThemeData darkTheme=ThemeData(
+    selectedRowColor: Colors.red,
+      appBarTheme: AppBarTheme(
+        color: Colors.black45,
+        actionsIconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        titleTextStyle: TextStyle(
+            color: Colors.white
+        ),
+        iconTheme: IconThemeData(
+            color: Colors.white
+        ),
+      ),
+      iconTheme:IconThemeData(
+        color: Colors.grey,
+      ),
+      backgroundColor: Colors.black45,
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedItemColor: Colors.white70,
+        unselectedItemColor: Colors.white54
+      ),
+    brightness: Brightness.dark,
+    inputDecorationTheme: InputDecorationTheme(
+      hintStyle: TextStyle(
+        color: Colors.white54,
+      ),
+      iconColor: Colors.white54,
+    ),
+    cardColor: Colors.white,
+
+  );
+
+  static ThemeData lightTheme=ThemeData(
+    appBarTheme: AppBarTheme(
+      color: Colors.white,
+      actionsIconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      titleTextStyle: TextStyle(
+          color: Colors.black
+      ),
+      iconTheme: IconThemeData(
+          color: Colors.black
+      ),
+    ),
+    iconTheme: IconThemeData(
+      color: Colors.grey,
+    ),
+    brightness: Brightness.light,
+    inputDecorationTheme: InputDecorationTheme(
+      iconColor: Colors.grey,
+      hintStyle: TextStyle(
+        color: Colors.grey
+      ),
+  ),
+    textTheme: TextTheme(
+      bodyMedium: TextStyle(
+        color: Colors.black87
+      ),
+    ),
+    cardColor: Colors.white
+  );
 
   @override
   State<Launcher> createState() => _LauncherState();
@@ -18,18 +82,24 @@ class Launcher extends StatefulWidget {
 class _LauncherState extends State<Launcher> {
 
   String theme = "light";
+
+  get darkTheme => Launcher.darkTheme;
+  get lightTheme => Launcher.lightTheme;
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NeedTaxi',
       initialRoute: '/',
+
       routes: {
         '/':(context)=>Application(),
       },
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      darkTheme: darkTheme,
+      theme: lightTheme,
+      themeMode: ThemeMode.light,
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
           return RouteTransition(
