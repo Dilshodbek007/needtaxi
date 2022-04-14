@@ -21,6 +21,7 @@ class Application extends StatefulWidget {
 class _ApplicationState extends State<Application> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   List icons = [
     Icons.home_filled,
     CupertinoIcons.search_circle_fill,
@@ -38,6 +39,8 @@ class _ApplicationState extends State<Application> {
   double menuWidth = 256;
 
   bool isPressed = false;
+
+  ThemeMode _themeMode=ThemeMode.system;
 
   @override
   void initState() {
@@ -71,6 +74,7 @@ class _ApplicationState extends State<Application> {
       child: Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
+          elevation: 1.2,
           leading: IconButton(
             onPressed: () {
               if (MediaQuery.of(context).size.width <= 800) {
@@ -95,7 +99,6 @@ class _ApplicationState extends State<Application> {
           title: const Text(
             "NeedTaxi",
           ),
-          elevation: 1.2,
         ),
         drawer: Drawer(
           child: myDrawer(),
@@ -119,13 +122,14 @@ class _ApplicationState extends State<Application> {
   //yordamchi funksiyalar
   //body
   Widget myBody() {
+    ThemeData theme=Theme.of(context);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (MediaQuery.of(context).size.width > 800) myDrawer(),
         if (MediaQuery.of(context).size.width > 800)
-          const VerticalDivider(
-            color: Colors.grey,
+           VerticalDivider(
+            color: theme.dividerColor,
             thickness: 0.4,
           ),
         Flexible(
@@ -236,5 +240,6 @@ class _ApplicationState extends State<Application> {
       ],
     );
   }
+
 
 }

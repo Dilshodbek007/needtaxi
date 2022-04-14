@@ -41,6 +41,7 @@ class Launcher extends StatefulWidget {
       iconColor: Colors.white54,
     ),
     cardColor: Colors.white,
+    dividerColor: Colors.white70,
 
   );
 
@@ -72,7 +73,8 @@ class Launcher extends StatefulWidget {
         color: Colors.black87
       ),
     ),
-    cardColor: Colors.white
+    cardColor: Colors.white,
+    dividerColor: Colors.grey
   );
 
   @override
@@ -82,10 +84,6 @@ class Launcher extends StatefulWidget {
 class _LauncherState extends State<Launcher> {
 
   String theme = "light";
-
-  get darkTheme => Launcher.darkTheme;
-  get lightTheme => Launcher.lightTheme;
-
 
   @override
   Widget build(BuildContext context) {
@@ -97,9 +95,21 @@ class _LauncherState extends State<Launcher> {
       routes: {
         '/':(context)=>Application(),
       },
-      darkTheme: darkTheme,
-      theme: lightTheme,
-      themeMode: ThemeMode.light,
+
+      theme: theme == "light"
+          ? ThemeData.light().copyWith(
+        iconTheme: IconThemeData(
+          size: 33,
+          color: Colors.grey,
+        ),
+      )
+          :
+      ThemeData.dark().copyWith(
+        iconTheme: IconThemeData(
+          size: 33,
+          color: Colors.grey,
+        ),
+      ),
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
           return RouteTransition(
@@ -174,4 +184,5 @@ class _LauncherState extends State<Launcher> {
       ),
     );
   }
+
 }
