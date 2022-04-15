@@ -35,13 +35,7 @@ class _ApplicationState extends State<Application> {
     'Account Page'
   ];
   int _currentPage = 0;
-
   double menuWidth = 256;
-
-  bool isPressed = false;
-
-  ThemeMode _themeMode=ThemeMode.system;
-
   @override
   void initState() {
     super.initState();

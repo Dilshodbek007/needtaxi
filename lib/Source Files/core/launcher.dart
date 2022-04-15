@@ -1,23 +1,17 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:needtaxi/Source%20Files/core/router.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'application.dart';
 
-
-
 class Launcher extends StatefulWidget {
-   Launcher({Key? key}) : super(key: key);
-
+  Launcher({Key? key}) : super(key: key);
 
   @override
   State<Launcher> createState() => _LauncherState();
 }
 
 class _LauncherState extends State<Launcher> {
-
   String theme = "light";
 
   @override
@@ -26,46 +20,10 @@ class _LauncherState extends State<Launcher> {
       debugShowCheckedModeBanner: false,
       title: 'NeedTaxi',
       initialRoute: '/',
-
       routes: {
-        '/':(context)=>Application(),
+        '/': (context) => Application(),
       },
-
-      theme: theme == "light"
-          ? ThemeData.light().copyWith(
-        iconTheme: IconThemeData(
-          size: 33,
-          color: Colors.grey,
-        ),
-          appBarTheme: AppBarTheme(
-            color: Colors.white,
-            actionsIconTheme: IconThemeData(
-              color: Colors.black,
-            ),
-            titleTextStyle: TextStyle(
-                color: Colors.black
-            ),
-            iconTheme: IconThemeData(
-                color: Colors.black
-            ),
-          ),
-          brightness: Brightness.light,
-          inputDecorationTheme: InputDecorationTheme(
-            iconColor: Colors.grey,
-            hintStyle: TextStyle(
-                color: Colors.grey
-            ),
-          ),
-          textTheme: TextTheme(
-            bodyMedium: TextStyle(
-                color: Colors.black87
-            ),
-          ),
-          cardColor: Colors.white,
-          dividerColor: Colors.grey
-      )
-          :
-      ThemeData.dark().copyWith(
+      darkTheme: ThemeData.dark().copyWith(
         iconTheme: IconThemeData(
           size: 33,
           color: Colors.grey,
@@ -75,18 +33,13 @@ class _LauncherState extends State<Launcher> {
           actionsIconTheme: IconThemeData(
             color: Colors.white,
           ),
-          titleTextStyle: TextStyle(
-              color: Colors.white
-          ),
-          iconTheme: IconThemeData(
-              color: Colors.white
-          ),
+          titleTextStyle: TextStyle(color: Colors.white),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         backgroundColor: Colors.black45,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
             selectedItemColor: Colors.white70,
-            unselectedItemColor: Colors.white54
-        ),
+            unselectedItemColor: Colors.white54),
         brightness: Brightness.dark,
         inputDecorationTheme: InputDecorationTheme(
           hintStyle: TextStyle(
@@ -97,6 +50,34 @@ class _LauncherState extends State<Launcher> {
         cardColor: Colors.white,
         dividerColor: Colors.white70,
       ),
+      theme: ThemeData.light().copyWith(
+          iconTheme: IconThemeData(
+            size: 33,
+            color: Colors.grey,
+          ),
+          appBarTheme: AppBarTheme(
+            color: Colors.white,
+            actionsIconTheme: IconThemeData(
+              color: Colors.black,
+            ),
+            titleTextStyle: TextStyle(color: Colors.black),
+            iconTheme: IconThemeData(color: Colors.black),
+          ),
+          brightness: Brightness.light,
+          inputDecorationTheme: InputDecorationTheme(
+            iconColor: Colors.grey,
+            hintStyle: TextStyle(color: Colors.grey),
+          ),
+          textTheme: TextTheme(
+            bodyMedium: TextStyle(color: Colors.black87),
+          ),
+          cardColor: Colors.white,
+          dividerColor: Colors.grey),
+      themeMode: theme == 'light'
+          ? ThemeMode.light
+          : theme == 'dark'
+              ? ThemeMode.dark
+              : ThemeMode.system,
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
           return RouteTransition(
@@ -105,11 +86,10 @@ class _LauncherState extends State<Launcher> {
           );
         } else if (settings.name == '/search') {
           return RouteTransition(
-              widget:  Application(
+              widget: Application(
                 route: settings.name,
               ),
-              routeName: settings.name
-          );
+              routeName: settings.name);
         } else if (settings.name == '/notifications') {
           return RouteTransition(
             widget: Application(
@@ -127,12 +107,12 @@ class _LauncherState extends State<Launcher> {
         }
         return null;
       },
-      onUnknownRoute: (_){
+      onUnknownRoute: (_) {
         return MaterialPageRoute(
-                builder: (BuildContext context) => const Scaffold(
-                  body: Text("Unknown page"),
-                ),
-              );
+          builder: (BuildContext context) => const Scaffold(
+            body: Text("Unknown page"),
+          ),
+        );
       },
       builder: (context, widget) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, widget!),
@@ -171,5 +151,4 @@ class _LauncherState extends State<Launcher> {
       ),
     );
   }
-
 }
