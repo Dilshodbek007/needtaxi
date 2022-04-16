@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:needtaxi/Source%20Files/core/router.dart';
+import 'package:needtaxi/l10n/l10n.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'application.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class Launcher extends StatefulWidget {
   Launcher({Key? key}) : super(key: key);
@@ -19,6 +23,13 @@ class _LauncherState extends State<Launcher> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NeedTaxi',
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: L10n.all,
       initialRoute: '/',
       routes: {
         '/': (context) => Application(),

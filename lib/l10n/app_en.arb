@@ -1,0 +1,19 @@
+{
+    "home": "Home Page",
+    "@home": {
+      "description": "Pages' Name"
+    },
+    "search": "Search Page",
+        "@search": {
+          "description": "Pages' Name"
+        },
+    "noti": "Notification Page",
+        "@noti": {
+          "description": "Pages' Name"
+        },
+    "account": "Account Page",
+        "@account": {
+          "description": "Pages' Name"
+        }
+
+}

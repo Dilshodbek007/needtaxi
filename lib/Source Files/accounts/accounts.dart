@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class Accounts extends StatefulWidget {
@@ -23,10 +24,13 @@ class _AccountsState extends State<Accounts> {
                   height: 50,
                   child: ListTile(
                       leading: const Icon(Icons.person),
-                      trailing: const Text("Account",
+                      trailing:  Text(
+                        AppLocalizations.of(context)!.account,
                         style: TextStyle(
                             color: Colors.green,fontSize: 15),),
-                      title:Text("List item $index")
+                      title:Text("List item $index",style: TextStyle(
+                          color: Colors.black
+                      ),),
                   ),
                 )
         ),

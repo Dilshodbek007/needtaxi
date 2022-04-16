@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -21,11 +22,14 @@ class _HomeState extends State<Home> {
               height: 50,
               child: ListTile(
                   leading: const Icon(Icons.home),
-                  trailing: const Text(
-                    "Home",
+                  trailing:  Text(
+                    AppLocalizations.of(context)!.home,
                     style: TextStyle(color: Colors.green, fontSize: 15),
                   ),
-                  title: Text("List item $index")),
+                  title: Text("List item $index",style: TextStyle(
+                    color: Colors.black
+                  ),),
+              ),
             )),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -21,11 +22,13 @@ class _SearchState extends State<Search> {
               height: 50,
               child: ListTile(
                   leading: const Icon(Icons.search),
-                  trailing: const Text(
-                    "Search",
+                  trailing:  Text(
+                    AppLocalizations.of(context)!.search,
                     style: TextStyle(color: Colors.green, fontSize: 15),
                   ),
-                  title: Text("List item $index")),
+                  title: Text("List item $index",style: TextStyle(
+                      color: Colors.black
+                  ),),),
             )),
       ),
     );
