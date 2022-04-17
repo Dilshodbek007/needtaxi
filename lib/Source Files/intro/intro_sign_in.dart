@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:needtaxi/Source%20Files/intro/intro_sign_up.dart';
 
 
 class IntroSignIn extends StatefulWidget {
   const IntroSignIn({Key? key}) : super(key: key);
+  static String id='sign_in';
 
   @override
   State<IntroSignIn> createState() => _IntroSignInState();
@@ -120,6 +122,10 @@ class _IntroSignInState extends State<IntroSignIn> {
                         SizedBox(width: 6),
                         GestureDetector(
                           onTap: (){
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context)=>IntroSignUp(),
+                              settings: RouteSettings(name: '/signup'),
+                            ),);
                           },
                           child: Text(AppLocalizations.of(context)!.logup,
                           style: TextStyle(

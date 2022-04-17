@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:needtaxi/Source%20Files/intro/intro_sign_in.dart';
+import 'package:needtaxi/Source%20Files/intro/intro_sign_up.dart';
 
 import '../accounts/accounts.dart';
 import '../home/home.dart';
@@ -100,6 +102,42 @@ class _ApplicationState extends State<Application> {
           title: const Text(
             "NeedTaxi",
           ),
+          actions: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.blue
+              ),
+              child: TextButton(
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context)=>IntroSignIn(),
+                      settings: RouteSettings(name: '/signin'),
+                    ),);
+                  },
+                  child: Text('Sign in',style: TextStyle(
+                    color: Colors.white
+                  ),),),
+            ),
+            Container(
+              margin: const EdgeInsets.only(right: 20,top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                  color: Colors.blue
+              ),
+              child: TextButton(
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context)=>IntroSignUp(),
+                    settings: RouteSettings(name: '/signup'),
+                  ),);
+                },
+                child: Text('Sign up',style: TextStyle(
+                    color: Colors.white
+                ),),),
+            ),
+          ],
         ),
         drawer: Drawer(
           child: myDrawer(),
