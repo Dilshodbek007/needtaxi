@@ -14,6 +14,22 @@
     "account": "Account Page",
         "@account": {
           "description": "Pages' Name"
-        }
+        },
+    "listItem": "List item",
+            "@listItem": {
+              "description": "list Name"
+            },
+    "login":"Log in",
+    "logup":"Log up",
+    "emailAddress":"Email address",
+    "password":"Password",
+    "fullName":"Fullname",
+    "enterName":"Enter your fullname",
+    "confirmPassword":"Confirm Password",
+    "forgotPassword":"Forgot Password",
+    "rememberInfo":"Remember Information",
+    "notMember":"Not a member",
+    "alreadyMember":"Already a member",
+    "slogan":"Life is a journey. Enjoy the ride with a taxi."
 
 }

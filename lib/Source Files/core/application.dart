@@ -6,6 +6,8 @@ import '../accounts/accounts.dart';
 import '../home/home.dart';
 import '../notifications/notifications.dart';
 import '../search/search.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 
 class Application extends StatefulWidget {
@@ -28,12 +30,17 @@ class _ApplicationState extends State<Application> {
     CupertinoIcons.bell_circle_fill,
     CupertinoIcons.person_fill
   ];
-  List<String> pageName = [
-    'Home Page',
-    'Search Page',
-    'Notification Page',
-    'Account Page'
-  ];
+
+  List<String> pageName(BuildContext context){
+    return [
+      AppLocalizations.of(context)!.home,
+      AppLocalizations.of(context)!.search,
+      AppLocalizations.of(context)!.noti,
+      AppLocalizations.of(context)!.account
+    ];
+
+  }
+
   int _currentPage = 0;
   double menuWidth = 256;
   @override
@@ -189,7 +196,7 @@ class _ApplicationState extends State<Application> {
                     Padding(
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
-                        pageName[i],
+                        pageName(context)[i],
                         style: TextStyle(
                           color: _currentPage == i
                               ?theme.textTheme.bodyMedium?.copyWith(
@@ -203,10 +210,32 @@ class _ApplicationState extends State<Application> {
                 ),
               ),
             )
-                : Icon(
+                : GestureDetector(
+              onTap: (){
+                if (kIsWeb) {
+                  if (i == 0) {
+                    Navigator.pushNamed(context, '/');
+                  } else if (i == 1) {
+                    Navigator.pushNamed(context, '/search');
+                  } else if (i == 2) {
+                    Navigator.pushNamed(context, '/notifications');
+                  } else if (i == 3) {
+                    Navigator.pushNamed(context, '/accounts');
+                  }
+                } else {
+                  setState(() {
+                    _currentPage = i;
+                  });
+                }
+              },
+                  child: Container(
+              padding: EdgeInsets.all(10),
+                    child: Icon(
               icons[i],
               color: theme.iconTheme.color,
             ),
+                  ),
+                ),
         ],
       ),
     );

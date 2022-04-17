@@ -28,7 +28,7 @@ class _AccountsState extends State<Accounts> {
                         AppLocalizations.of(context)!.account,
                         style: TextStyle(
                             color: Colors.green,fontSize: 15),),
-                      title:Text("List item $index",style: TextStyle(
+                      title:Text("${AppLocalizations.of(context)!.listItem} $index",style: TextStyle(
                           color: Colors.black
                       ),),
                   ),

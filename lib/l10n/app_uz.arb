@@ -2,5 +2,18 @@
   "home": "Uy Sahifasi",
   "search": "Qidiruv sahifasi",
   "noti": "Bildirishnoma Sahifasi",
-  "account": "Foydalanuvchi Sahifasi"
+  "account": "Foydalanuvchi Sahifasi",
+  "listItem": "Ro'yhat elementi",
+  "login":"Tizimga Kirish",
+  "logup":"Ro'yhatdan o'tish",
+  "emailAddress":"Email manzil",
+  "password":"Parol",
+  "fullName":"To'liq ism-familyasi",
+  "enterName":"To'liq ism-familyangizni kiriting",
+  "confirmPassword":"Parolni tasqidlang",
+  "forgotPassword":"Parolni unutdingizmi?",
+  "rememberInfo":"Ma'lumotlarni saqla",
+  "notMember":"A'zosi emasman",
+  "alreadyMember":"Allaqachon ro'yhatga olingan",
+  "slogan":"Hayot - bu sayohat. Taksi bilan sayohatdan rohatlaning."
 }

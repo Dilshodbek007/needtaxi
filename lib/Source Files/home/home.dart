@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
                     AppLocalizations.of(context)!.home,
                     style: TextStyle(color: Colors.green, fontSize: 15),
                   ),
-                  title: Text("List item $index",style: TextStyle(
+                  title: Text("${AppLocalizations.of(context)!.listItem} $index",style: TextStyle(
                     color: Colors.black
                   ),),
               ),

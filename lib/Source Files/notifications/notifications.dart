@@ -29,7 +29,7 @@ class _NotificationsState extends State<Notifications> {
                         AppLocalizations.of(context)!.noti,
                         style: TextStyle(
                             color: Colors.green,fontSize: 15),),
-                      title:Text("List item $index",style: TextStyle(
+                      title:Text("${AppLocalizations.of(context)!.listItem} $index",style: TextStyle(
                           color: Colors.black
                       ),),
                   ),
