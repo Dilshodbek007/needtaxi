@@ -112,7 +112,7 @@ class _ApplicationState extends State<Application> {
               child: TextButton(
                   onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context)=>IntroSignIn(),
+                      builder: (context)=>SignIn(),
                       settings: RouteSettings(name: '/signin'),
                     ),);
                   },
@@ -130,7 +130,7 @@ class _ApplicationState extends State<Application> {
               child: TextButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context)=>IntroSignUp(),
+                    builder: (context)=>SignUp(),
                     settings: RouteSettings(name: '/signup'),
                   ),);
                 },

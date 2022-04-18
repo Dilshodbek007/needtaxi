@@ -19,7 +19,7 @@
             "@listItem": {
               "description": "list Name"
             },
-    "login":"Log in",
+    "login":"Sign in",
     "logup":"Sign up",
     "emailAddress":"Email address",
     "password":"Password",
