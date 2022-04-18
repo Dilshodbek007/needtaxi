@@ -20,7 +20,7 @@
               "description": "list Name"
             },
     "login":"Log in",
-    "logup":"Log up",
+    "logup":"Sign up",
     "emailAddress":"Email address",
     "password":"Password",
     "fullName":"Fullname",

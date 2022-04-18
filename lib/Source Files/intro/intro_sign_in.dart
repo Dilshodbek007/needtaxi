@@ -19,128 +19,127 @@ class _IntroSignInState extends State<IntroSignIn> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(
-              child: Container(
-                padding: EdgeInsets.only(left: 90,right: 80,top: 60),
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      AppLocalizations.of(context)!.login,
-                      style: TextStyle(fontSize: 20, color: Colors.black),
+            Container(
+              padding: EdgeInsets.only(left: 90,right: 80,top: 60),
+              constraints: BoxConstraints(maxWidth: 512),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    AppLocalizations.of(context)!.login,
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
+                  SizedBox(height: 40),
+                  Text(
+                    AppLocalizations.of(context)!.emailAddress,
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
+                  SizedBox(height: 8),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        border: Border.all(color: Colors.grey, width: 1)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(left: 10),
+                          border: InputBorder.none,
+                          hintText: 'name@company.com',
+                          hintStyle: TextStyle(fontSize: 12, color: Colors.grey)),
                     ),
-                    SizedBox(height: 40),
-                    Text(
-                      AppLocalizations.of(context)!.emailAddress,
-                      style: TextStyle(fontSize: 14, color: Colors.black),
-                    ),
-                    SizedBox(height: 8),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          border: Border.all(color: Colors.grey, width: 1)),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(left: 10),
-                            border: InputBorder.none,
-                            hintText: 'name@company.com',
-                            hintStyle: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          AppLocalizations.of(context)!.password,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Text(
-                          AppLocalizations.of(context)!.forgotPassword,
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.blue.shade800,
-                            fontWeight: FontWeight.w400
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 8),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          border: Border.all(color: Colors.grey, width: 1)),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(left: 10),
-                            border: InputBorder.none,
-                            hintText: 'Placeholder',
-                            hintStyle: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Icon(
-                            Icons.check_box_outline_blank,
-                            size: 20,
-                          ),
-                        ),
-                        SizedBox(width: 7),
-                        Text(AppLocalizations.of(context)!.rememberInfo),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.blue.shade800,
-                        borderRadius: BorderRadius.circular(7)
-                      ),
-                      child: TextButton(
-                        onPressed: (){},
-                        child: Text(AppLocalizations.of(context)!.login,style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-
-                        ),),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      children: [
-                        Text(AppLocalizations.of(context)!.notMember,style: TextStyle(
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        AppLocalizations.of(context)!.password,
+                        style: TextStyle(
                           fontSize: 14,
                           color: Colors.black,
-                        ),),
-                        SizedBox(width: 6),
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context)=>IntroSignUp(),
-                              settings: RouteSettings(name: '/signup'),
-                            ),);
-                          },
-                          child: Text(AppLocalizations.of(context)!.logup,
-                          style: TextStyle(
+                        ),
+                      ),
+                      Text(
+                        AppLocalizations.of(context)!.forgotPassword,
+                        style: TextStyle(
+                            fontSize: 14,
                             color: Colors.blue.shade800,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14
-                          ),),
-                        )
-                      ],
-                    )
-                  ],
-                ),
+                          fontWeight: FontWeight.w400
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 8),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        border: Border.all(color: Colors.grey, width: 1)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(left: 10),
+                          border: InputBorder.none,
+                          hintText: 'Placeholder',
+                          hintStyle: TextStyle(fontSize: 12, color: Colors.grey)),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Icon(
+                          Icons.check_box_outline_blank,
+                          size: 20,
+                        ),
+                      ),
+                      SizedBox(width: 7),
+                      Text(AppLocalizations.of(context)!.rememberInfo),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF3069FE),
+                      borderRadius: BorderRadius.circular(7)
+                    ),
+                    child: TextButton(
+                      onPressed: (){},
+                      child: Text(AppLocalizations.of(context)!.login,style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Text(AppLocalizations.of(context)!.notMember,style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                      ),),
+                      SizedBox(width: 6),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context)=>IntroSignUp(),
+                            settings: RouteSettings(name: '/signup'),
+                          ),);
+                        },
+                        child: Text(AppLocalizations.of(context)!.logup,
+                        style: TextStyle(
+                          color: Color(0xFF5785FE),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14
+                        ),),
+                      )
+                    ],
+                  )
+                ],
               ),
             ),
-            if(MediaQuery.of(context).size.width>800)
+            if(MediaQuery.of(context).size.width>1200)
             Flexible(
               child: Container(
                 height: MediaQuery.of(context).size.height,

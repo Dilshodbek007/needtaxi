@@ -116,8 +116,9 @@ class _ApplicationState extends State<Application> {
                       settings: RouteSettings(name: '/signin'),
                     ),);
                   },
-                  child: Text('Sign in',style: TextStyle(
-                    color: Colors.white
+                  child: Text( AppLocalizations.of(context)!.login,style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600
                   ),),),
             ),
             Container(
@@ -133,8 +134,9 @@ class _ApplicationState extends State<Application> {
                     settings: RouteSettings(name: '/signup'),
                   ),);
                 },
-                child: Text('Sign up',style: TextStyle(
-                    color: Colors.white
+                child: Text( AppLocalizations.of(context)!.logup,style: TextStyle(
+                    color: Colors.white,
+                  fontWeight: FontWeight.w600,
                 ),),),
             ),
           ],

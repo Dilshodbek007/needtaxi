@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:needtaxi/Source%20Files/core/router.dart';
-import 'package:needtaxi/Source%20Files/intro/intro_sign_in.dart';
 import 'package:needtaxi/l10n/l10n.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
