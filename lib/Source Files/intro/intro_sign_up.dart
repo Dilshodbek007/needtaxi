@@ -15,13 +15,19 @@ class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
 
   var emailController=TextEditingController();
-  var passwordController=TextEditingController();
+  var pass=TextEditingController();
   var nameController=TextEditingController();
-  var cpasswordController=TextEditingController();
+  var confpass=TextEditingController();
+
+  var isPressed=false;
+  String? text;
+
+  var _focusNode=FocusNode();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -29,8 +35,8 @@ class _SignUpState extends State<SignUp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.only(left: 90,right: 80,top: 60),
-                constraints: BoxConstraints(maxWidth: 512),
+                padding: EdgeInsets.all(50),
+                constraints: BoxConstraints(maxWidth: 640),
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -105,7 +111,7 @@ class _SignUpState extends State<SignUp> {
 
                     //password textformfield
                     TextFormField(
-                      controller: passwordController,
+                      controller: pass,
                       validator: (value) {
                         if (value!.length < 6) {
                           return 'Password must be at least 6 characters';
@@ -135,12 +141,16 @@ class _SignUpState extends State<SignUp> {
 
                     //confirm password textfield
                     TextFormField(
-                      controller: cpasswordController,
+                      controller: confpass,
                       validator: (value) {
-                        if (value!.length < 6) {
-                          return 'Password must be at least 6 characters';
+                        if (confpass.text.isNotEmpty) {
+                          if(confpass.text!=pass.text) {
+                            return 'Not Match';
+                          }else{
+                            return null;
+                          }
                         } else {
-                          return null;
+                          return 'Empty';
                         }
                       },
                       decoration: InputDecoration(
@@ -153,7 +163,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: 30),
 
-                    //logup button
+                    //sign up button
                     Container(
                       height: 40,
                       decoration: BoxDecoration(
@@ -162,13 +172,27 @@ class _SignUpState extends State<SignUp> {
                       ),
                       child: TextButton(
                         onPressed: (){
-                          signUp();
+                          setState(() {
+                            isPressed=true;
+                          });
+                         Future.delayed(Duration(
+                           seconds: 2
+                         )).then((value) => signUp());
+
                         },
-                        child: Text(AppLocalizations.of(context)!.logup,style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600
-                        ),),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Text(AppLocalizations.of(context)!.logup,style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                            ),),
+                            if(isPressed)CircularProgressIndicator(
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 20),

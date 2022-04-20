@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:needtaxi/Source%20Files/core/router.dart';
-import 'package:needtaxi/Source%20Files/intro/intro_sign_in.dart';
-import 'package:needtaxi/Source%20Files/intro/intro_sign_up.dart';
 import 'package:needtaxi/l10n/l10n.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'application.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 
 class Launcher extends StatefulWidget {
   Launcher({Key? key}) : super(key: key);
@@ -34,7 +31,7 @@ class _LauncherState extends State<Launcher> {
       supportedLocales: L10n.all,
       initialRoute: '/',
       routes: {
-         '/': (context) => Application(),
+        '/': (context) => Application(),
       },
       darkTheme: ThemeData.dark().copyWith(
         iconTheme: IconThemeData(
@@ -64,29 +61,48 @@ class _LauncherState extends State<Launcher> {
         dividerColor: Colors.white70,
       ),
       theme: ThemeData.light().copyWith(
-          iconTheme: IconThemeData(
-            size: 33,
+        iconTheme: IconThemeData(
+          size: 33,
+          color: Colors.grey,
+        ),
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+          actionsIconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+          titleTextStyle: TextStyle(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
+        brightness: Brightness.light,
+        inputDecorationTheme: InputDecorationTheme(
+          iconColor: Colors.grey,
+          hintStyle: TextStyle(color: Colors.grey),
+          errorStyle: TextStyle(
+            color: Colors.red,
+          ),
+          counterStyle: TextStyle(
             color: Colors.grey,
           ),
-          appBarTheme: AppBarTheme(
-            color: Colors.white,
-            actionsIconTheme: IconThemeData(
-              color: Colors.black,
-            ),
-            titleTextStyle: TextStyle(color: Colors.black),
-            iconTheme: IconThemeData(color: Colors.black),
+          fillColor: Colors.white,
+          filled: true,
+          isDense: false,
+          suffixStyle: TextStyle(
+            color: Colors.grey,
           ),
-          brightness: Brightness.light,
-          inputDecorationTheme: InputDecorationTheme(
-            iconColor: Colors.grey,
-            hintStyle: TextStyle(color: Colors.grey),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7),
           ),
-          textTheme: TextTheme(
-            bodyMedium: TextStyle(color: Colors.black87),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7),
           ),
-          cardColor: Colors.white,
-          dividerColor: Colors.grey),
-
+        ),
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(color: Colors.black87),
+        ),
+        cardColor: Colors.white,
+        dividerColor: Colors.grey,
+        backgroundColor: Colors.white,
+      ),
       themeMode: theme == 'light'
           ? ThemeMode.light
           : theme == 'dark'
@@ -118,14 +134,14 @@ class _LauncherState extends State<Launcher> {
             ),
             routeName: settings.name,
           );
-        }else if (settings.name == '/signup') {
+        } else if (settings.name == '/signup') {
           return RouteTransition(
             widget: Application(
               route: settings.name,
             ),
             routeName: settings.name,
           );
-        }else if (settings.name == '/signin') {
+        } else if (settings.name == '/signin') {
           return RouteTransition(
             widget: Application(
               route: settings.name,
