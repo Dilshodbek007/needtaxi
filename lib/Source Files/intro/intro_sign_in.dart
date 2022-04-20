@@ -112,7 +112,7 @@ class _SignInState extends State<SignIn> {
                       controller: passwordController,
                       validator: (value) {
                         if (value!.length <=8) {
-                          return 'Password must be at least 6 characters';
+                          return 'Password must be at least 8 characters';
                         } else {
                           return null;
                         }
@@ -270,3 +270,4 @@ extension EmailValidator on String {
         .hasMatch(this);
   }
 }
+

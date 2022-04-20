@@ -16,6 +16,17 @@ class Launcher extends StatefulWidget {
 
 class _LauncherState extends State<Launcher> {
   String theme = "light";
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,12 +63,18 @@ class _LauncherState extends State<Launcher> {
             unselectedItemColor: Colors.white54),
         brightness: Brightness.dark,
         inputDecorationTheme: InputDecorationTheme(
+          focusColor: Colors.lightBlueAccent,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7),
+          ),
           hintStyle: TextStyle(
-            color: Colors.white54,
+            color: Colors.grey,
+            fontSize: 12
           ),
           iconColor: Colors.white54,
         ),
         cardColor: Colors.white,
+        focusColor: Colors.lightBlueAccent,
         dividerColor: Colors.white70,
       ),
       theme: ThemeData.light().copyWith(
@@ -82,6 +99,13 @@ class _LauncherState extends State<Launcher> {
           ),
           counterStyle: TextStyle(
             color: Colors.grey,
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                  color: Colors.blue,
+                  width: 1
+              ),
+              borderRadius: BorderRadius.circular(7)
           ),
           fillColor: Colors.white,
           filled: true,
