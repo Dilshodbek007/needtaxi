@@ -93,7 +93,9 @@ class _LauncherState extends State<Launcher> {
         brightness: Brightness.light,
         inputDecorationTheme: InputDecorationTheme(
           iconColor: Colors.grey,
-          hintStyle: TextStyle(color: Colors.grey),
+          hintStyle: TextStyle(
+            fontSize: 14,
+              color: Colors.grey.withOpacity(0.6)),
           errorStyle: TextStyle(
             color: Colors.red,
           ),
@@ -102,7 +104,7 @@ class _LauncherState extends State<Launcher> {
           ),
           focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: Colors.blue,
+                  color: Color(0xFF3069FE),
                   width: 1
               ),
               borderRadius: BorderRadius.circular(7)
@@ -115,9 +117,17 @@ class _LauncherState extends State<Launcher> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7),
+            borderSide: BorderSide(
+                color: Color(0xFF3069FE),
+                width: 1
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7),
+            borderSide: BorderSide(
+                color: Colors.grey.withOpacity(0.17),
+                width: 1
+            ),
           ),
         ),
         textTheme: TextTheme(

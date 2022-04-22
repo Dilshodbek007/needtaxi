@@ -23,13 +23,14 @@
     "logup":"Sign up",
     "emailAddress":"Email address",
     "password":"Password",
-    "fullName":"Fullname",
+    "firstName":"Firstname",
+    "lastName":"Lastname",
     "enterName":"Enter your fullname",
     "confirmPassword":"Confirm Password",
-    "forgotPassword":"Forgot Password",
+    "forgotPassword":"Forgot Password?",
     "rememberInfo":"Remember Information",
-    "notMember":"Not a member",
-    "alreadyMember":"Already a member",
+    "notMember":"Not a member?",
+    "alreadyMember":"Already a member?",
     "slogan":"Life is a journey. Enjoy the ride with a taxi."
 
 }

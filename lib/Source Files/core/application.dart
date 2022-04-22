@@ -135,7 +135,7 @@ class _ApplicationState extends State<Application> {
               child: TextButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context)=>SignUp(),
+                    builder: (context)=> SignUp(),
                     settings: RouteSettings(name: '/signup'),
                   ),);
                 },
