@@ -51,6 +51,7 @@ class _SignUpState extends State<SignUp> {
           children: [
             Flexible(
               child: SingleChildScrollView(
+                controller: scrollController,
                 child: Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(70),
