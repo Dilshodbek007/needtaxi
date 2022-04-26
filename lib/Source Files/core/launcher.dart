@@ -63,6 +63,7 @@ class _LauncherState extends State<Launcher> {
             unselectedItemColor: Colors.white54),
         brightness: Brightness.dark,
         inputDecorationTheme: InputDecorationTheme(
+          contentPadding: EdgeInsets.only(left: 10),
           focusColor: Colors.lightBlueAccent,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7),
@@ -72,10 +73,13 @@ class _LauncherState extends State<Launcher> {
             fontSize: 12
           ),
           iconColor: Colors.white54,
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(7)),
         ),
         cardColor: Colors.white,
         focusColor: Colors.lightBlueAccent,
         dividerColor: Colors.white70,
+
       ),
       theme: ThemeData.light().copyWith(
         iconTheme: IconThemeData(
@@ -92,16 +96,20 @@ class _LauncherState extends State<Launcher> {
         ),
         brightness: Brightness.light,
         inputDecorationTheme: InputDecorationTheme(
+          contentPadding: EdgeInsets.only(left: 10),
           iconColor: Colors.grey,
           hintStyle: TextStyle(
             fontSize: 14,
-              color: Colors.grey.withOpacity(0.6)),
+              color: Colors.grey[600]
+          ),
           errorStyle: TextStyle(
             color: Colors.red,
           ),
           counterStyle: TextStyle(
             color: Colors.grey,
           ),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(7)),
           focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide(
                   color: Color(0xFF3069FE),
@@ -125,7 +133,7 @@ class _LauncherState extends State<Launcher> {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7),
             borderSide: BorderSide(
-                color: Colors.grey.withOpacity(0.17),
+                color: Colors.grey.shade300,
                 width: 1
             ),
           ),
@@ -145,9 +153,10 @@ class _LauncherState extends State<Launcher> {
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
           return RouteTransition(
-            widget: const Application(),
-            routeName: settings.name,
-          );
+              widget: Application(
+                route: settings.name,
+              ),
+              routeName: settings.name);
         } else if (settings.name == '/search') {
           return RouteTransition(
               widget: Application(
