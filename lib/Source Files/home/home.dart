@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,14 +11,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Map> data = [
+  List data = [
     {
       "title": "Walk to Oak Park",
       "description": "Bright Madison Street Laft",
       "location": "42, 32",
       "address": "Forest Park, Illinois, USA",
-      "image":
-          "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       "price": 94,
       "currency": "USD",
       "stars": 4.5,
@@ -27,8 +27,47 @@ class _HomeState extends State<Home> {
       "description": "Green Madison Street Park",
       "location": "42, 32",
       "address": "Green Park, New-York, USA",
-      "image":
-          "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "price": 99,
+      "currency": "USD",
+      "stars": 5,
+    },
+    {
+      "title": "Walk to Oak Park",
+      "description": "Bright Madison Street Laft",
+      "location": "42, 32",
+      "address": "Forest Park, Illinois, USA",
+      "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "price": 94,
+      "currency": "USD",
+      "stars": 4.5,
+    },
+    {
+      "title": "Green Garden Park",
+      "description": "Green Madison Street Park",
+      "location": "42, 32",
+      "address": "Green Park, New-York, USA",
+      "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "price": 99,
+      "currency": "USD",
+      "stars": 5,
+    },
+    {
+      "title": "Walk to Oak Park",
+      "description": "Bright Madison Street Laft",
+      "location": "42, 32",
+      "address": "Forest Park, Illinois, USA",
+      "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "price": 94,
+      "currency": "USD",
+      "stars": 4.5,
+    },
+    {
+      "title": "Green Garden Park",
+      "description": "Green Madison Street Park",
+      "location": "42, 32",
+      "address": "Green Park, New-York, USA",
+      "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
       "price": 99,
       "currency": "USD",
       "stars": 5,
@@ -50,255 +89,162 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide: BorderSide(
-                                color: Colors.grey.shade300, width: 1)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide: BorderSide(
-                                color: Colors.grey.shade300, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1)),
-                        disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1)),
-                        prefixIcon: Icon(Icons.search),
-                        hintText: 'Enter location ...',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                        )),
-                  ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(25),
-                        border:
-                            Border.all(color: Colors.grey.shade300, width: 1)),
-                    child: Icon(
-                      Icons.filter_alt,
-                      color: Colors.blue,
-                    ))
-              ],
-            ),
-            SizedBox(height: 20),
-            Divider(
-              color: Colors.grey.shade400,
-              height: 0.5,
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Travel with us',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: Colors.grey[800],
-                  ),
-                ),
-                Text(
-                  'See All',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: Colors.blue),
-                ),
-              ],
-            ),
-            SizedBox(height: 15),
-            Expanded(
-              child: Container(
-                child: GridView.extent(
-                  childAspectRatio: 1.5,
-                  maxCrossAxisExtent: 512,
-                  padding: EdgeInsets.all(10),
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 10,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  data[0]["image"],
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                              border: Border.all(
-                                  color: Colors.grey.shade400, width: 1)),
-                        ),
-                        SizedBox(height: 15),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.location_on_outlined,
-                                  color: Colors.blue,
-                                  size: 20,
-                                ),
-                                SizedBox(width: 8),
-                                Text(
-                                  data[0]['address'],
-                                  style: TextStyle(
-                                      fontSize: 18, color: Colors.grey),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                for (int i = 0; i < 5; i++)
-                                  Icon(
-                                    Icons.star_border_outlined,
-                                    size: 20,
-                                    color: Colors.blue,
-                                  )
-                              ],
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          title: Text(
-                            data[0]['title'],
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          subtitle: Text(
-                            data[0]['description'],
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          trailing: SizedBox(
-                            height: 50,
-                            width: 70,
-                            child: Row(
-                              children: [
-                                Text(data[0]['price'].toString()+'\$',style: TextStyle(
-                                  color: Colors.amber
-                                ),),
-                                SizedBox(width: 5),
-                                Text('Night',style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400
-                                ),),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  data[1]["image"],
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                              border: Border.all(
-                                  color: Colors.grey.shade400, width: 1)),
-                        ),
-                        SizedBox(height: 15),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.location_on_outlined,
-                                  color: Colors.blue,
-                                  size: 20,
-                                ),
-                                SizedBox(width: 8),
-                                Text(
-                                  data[1]['address'],
-                                  style: TextStyle(
-                                      fontSize: 18, color: Colors.grey),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                for (int i = 0; i < 5; i++)
-                                  Icon(
-                                    Icons.star_border_outlined,
-                                    size: 20,
-                                    color: Colors.blue,
-                                  )
-                              ],
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          title: Text(
-                            data[1]['title'],
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          subtitle: Text(
-                            data[1]['description'],
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          trailing: SizedBox(
-                            height: 50,
-                            width: 70,
-                            child: Row(
-                              children: [
-                                Text(data[1]['price'].toString()+'\$',style: TextStyle(
-                                    color: Colors.amber
-                                ),),
-                                SizedBox(width: 5),
-                                Text('Night',style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400
-                                ),),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+      body: ListView(
+        padding: const EdgeInsets.all(10),
+        controller: ScrollController(),
+        shrinkWrap: true,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                              color: Colors.grey.shade300, width: 1)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                              color: Colors.grey.shade300, width: 1)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1)),
+                      disabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1)),
+                      prefixIcon: Icon(Icons.search),
+                      hintText: 'Enter location ...',
+                      hintStyle: TextStyle(
+                        color: Colors.grey,
+                      )),
                 ),
               ),
+              const SizedBox(width: 10),
+              Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      border:
+                          Border.all(color: Colors.grey.shade300, width: 1)),
+                  child: Icon(
+                    Icons.filter_alt,
+                    color: Colors.blue,
+                  ))
+            ],
+          ),
+          const SizedBox(height: 20),
+          Divider(
+            color: Colors.grey.shade400,
+            height: 0.5,
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Travel with us',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                  color: Colors.grey[800],
+                ),
+              ),
+              const Text(
+                'See All',
+                style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                    color: Colors.blue),
+              ),
+            ],
+          ),
+          const SizedBox(height: 15),
+          GridView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: data.length,
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              crossAxisSpacing: 20,
+              mainAxisExtent: 320,
+              maxCrossAxisExtent: 512,
             ),
-          ],
-        ),
+            itemBuilder: (ctx, index) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: NetworkImage(
+                          data[index]["image"],
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                      border: Border.all(
+                          color: Colors.grey.shade400, width: 1)),
+                ),
+                ListTile(
+                  minLeadingWidth: 10.0,
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(
+                    Icons.location_on_outlined,
+                    color: Colors.blue,
+                    size: 20,
+                  ),
+                  title: Text(
+                    data[index]['address'],
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
+                  ),
+                  trailing: SizedBox(
+                    height: 50,
+                    width: 100,
+                    child: Row(
+                      children: [
+                        for (int i = 0; i < 5; i++)
+                          const Icon(
+                            Icons.star_border_outlined,
+                            size: 20,
+                            color: Colors.blue,
+                          )
+                      ],
+                    ),
+                  ),
+                ),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    data[index]['title'],
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                  subtitle: Text(
+                    data[index]['description'],
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  trailing: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: data[0]['price'].toString()+'\$'+'  ',style: TextStyle(color: Colors.amber.shade900)),
+                        const TextSpan(text: 'Night',style: TextStyle(color: Colors.grey))
+                      ]
+                    ),
+
+                  )
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
