@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -170,65 +169,87 @@ class _HomeState extends State<Home> {
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              crossAxisSpacing: 20,
-              mainAxisExtent: 320,
+              crossAxisSpacing: 30,
+              mainAxisSpacing: 30,
+              mainAxisExtent: 350,
               maxCrossAxisExtent: 512,
             ),
             itemBuilder: (ctx, index) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          data[index]["image"],
+                InkWell(
+                  onTap: (){
+                  },
+                  child: Container(
+                    height: 230,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            data[index]["image"],
+                          ),
+                          fit: BoxFit.cover,
                         ),
-                        fit: BoxFit.cover,
+                        border: Border.all(
+                            color: Colors.grey.shade400, width: 1)),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ListTile(
+                        onTap: (){},
+                        minLeadingWidth: 10.0,
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Icon(
+                          Icons.location_on_outlined,
+                          color: Colors.blue,
+                          size: 20,
+                        ),
+                        title: Text(
+                          data[index]['address'],
+                          style: const TextStyle(fontSize: 18, color: Colors.grey),
+                        ),
                       ),
-                      border: Border.all(
-                          color: Colors.grey.shade400, width: 1)),
+                    ),
+                    SizedBox(
+                      height: 50,
+                      width: 100,
+                      child: Row(
+                        children: [
+                          for (int i = 0; i < 5; i++)
+                            InkWell(
+                              onTap: (){},
+                              child: const Icon(
+                                Icons.star_border_outlined,
+                                size: 20,
+                                color: Colors.blue,
+                              ),
+                            )
+                        ],
+                      ),
+                    ),
+
+                  ],
                 ),
                 ListTile(
-                  minLeadingWidth: 10.0,
                   contentPadding: EdgeInsets.zero,
-                  leading: const Icon(
-                    Icons.location_on_outlined,
-                    color: Colors.blue,
-                    size: 20,
-                  ),
-                  title: Text(
-                    data[index]['address'],
-                    style: const TextStyle(fontSize: 18, color: Colors.grey),
-                  ),
-                  trailing: SizedBox(
-                    height: 50,
-                    width: 100,
-                    child: Row(
-                      children: [
-                        for (int i = 0; i < 5; i++)
-                          const Icon(
-                            Icons.star_border_outlined,
-                            size: 20,
-                            color: Colors.blue,
-                          )
-                      ],
+                  title: InkWell(
+                    onTap: (){},
+                    child: Text(
+                      data[index]['title'],
+                      style: const TextStyle(fontSize: 20),
                     ),
                   ),
-                ),
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(
-                    data[index]['title'],
-                    style: const TextStyle(fontSize: 20),
-                  ),
-                  subtitle: Text(
-                    data[index]['description'],
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
+                  subtitle: InkWell(
+                    onTap: (){},
+                    child: Text(
+                      data[index]['description'],
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                   trailing: RichText(
