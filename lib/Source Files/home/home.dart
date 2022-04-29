@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
                             Border.all(color: Colors.grey.shade300, width: 1)),
                     child: Icon(
                       Icons.filter_alt,
-                      color: Colors.purpleAccent,
+                      color: Colors.blue,
                     ))
               ],
             ),
@@ -111,14 +111,15 @@ class _HomeState extends State<Home> {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: Colors.blue),
+                      color: Colors.grey[800],
+                  ),
                 ),
                 Text(
                   'See All',
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: Colors.purpleAccent.shade700),
+                      color: Colors.blue),
                 ),
               ],
             ),
@@ -126,6 +127,7 @@ class _HomeState extends State<Home> {
             Expanded(
               child: Container(
                 child: GridView.extent(
+                  childAspectRatio: 1.5,
                   maxCrossAxisExtent: 512,
                   padding: EdgeInsets.all(10),
                   crossAxisSpacing: 20,
@@ -172,6 +174,7 @@ class _HomeState extends State<Home> {
                                   Icon(
                                     Icons.star_border_outlined,
                                     size: 20,
+                                    color: Colors.blue,
                                   )
                               ],
                             )
@@ -187,7 +190,7 @@ class _HomeState extends State<Home> {
                           subtitle: Text(
                             data[0]['description'],
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.grey,
                             ),
                           ),
@@ -197,7 +200,7 @@ class _HomeState extends State<Home> {
                             child: Row(
                               children: [
                                 Text(data[0]['price'].toString()+'\$',style: TextStyle(
-                                  color: Colors.blue
+                                  color: Colors.amber
                                 ),),
                                 SizedBox(width: 5),
                                 Text('Night',style: TextStyle(
@@ -251,6 +254,7 @@ class _HomeState extends State<Home> {
                                   Icon(
                                     Icons.star_border_outlined,
                                     size: 20,
+                                    color: Colors.blue,
                                   )
                               ],
                             )
@@ -266,7 +270,7 @@ class _HomeState extends State<Home> {
                           subtitle: Text(
                             data[1]['description'],
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.grey,
                             ),
                           ),
@@ -276,7 +280,7 @@ class _HomeState extends State<Home> {
                             child: Row(
                               children: [
                                 Text(data[1]['price'].toString()+'\$',style: TextStyle(
-                                    color: Colors.blue
+                                    color: Colors.amber
                                 ),),
                                 SizedBox(width: 5),
                                 Text('Night',style: TextStyle(
