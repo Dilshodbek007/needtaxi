@@ -49,7 +49,7 @@ class _SignUpState extends State<SignUp> {
         child: Row(
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(
+            Expanded(
               child: SingleChildScrollView(
                 controller: scrollController,
                 child: Container(
